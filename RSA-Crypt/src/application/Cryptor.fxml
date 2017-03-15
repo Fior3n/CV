@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <GridPane fx:id="gp" layoutX="8.0" layoutY="14.0" maxWidth="1000.0" minWidth="1000.0" prefHeight="700.0" prefWidth="1000.0" visible="false" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="14.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="512.0" minWidth="10.0" prefWidth="495.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.0" minWidth="10.0" prefWidth="505.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="289.0" minHeight="10.0" prefHeight="257.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="420.0" minHeight="10.0" prefHeight="168.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextArea fx:id="tatext" prefHeight="200.0" prefWidth="200.0">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea fx:id="tafinal" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Label text="Текст який треба зашифрувати">
+               <GridPane.margin>
+                  <Insets bottom="245.0" left="20.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Розшифрований текст" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="245.0" left="20.0" top="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Hash text" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="400.0" left="20.0" right="5.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="tahash" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="320.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Label text="Easy key" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="220.0" left="20.0" top="30.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfkey" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="160.0" left="20.0" right="20.0" top="30.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="N-module" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="80.0" left="20.0" top="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfn" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button fx:id="shifr" mnemonicParsing="false" onAction="#Shifr" text="Шифрувати" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="200.0" top="150.0" />
+               </GridPane.margin>
+            </Button>
+            <Label text="Secret key" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="400.0" left="20.0" top="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label text="Number that we get" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="190.0" left="20.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="secret" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="320.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </TextArea>
+            <TextArea fx:id="taget" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="195.0" left="20.0" right="20.0" top="125.0" />
+               </GridPane.margin>
+            </TextArea>
+            <Button fx:id="rozshifr" alignment="CENTER" mnemonicParsing="false" onAction="#Rozshif" text="Розшифрувати" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="190.0" top="150.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+      <Button fx:id="random" mnemonicParsing="false" onAction="#Random" text="Згенерувати" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="448.0" AnchorPane.rightAnchor="446.0" AnchorPane.topAnchor="334.0" />
+   </children>
+</AnchorPane>
